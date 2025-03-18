@@ -31,7 +31,7 @@ describe("FileDownload", () => {
 
     expect(
       screen.getByLabelText<HTMLInputElement>(
-        `Select file ${scheduledFile.key}`
+        `Select file ${scheduledFile.name}`
       )
     ).toBeDisabled();
   });
@@ -49,7 +49,9 @@ describe("FileDownload", () => {
     render(<FileDownload {...props} />);
 
     // Download available file
-    await user.click(screen.getByLabelText(`Select file ${availableFile.key}`));
+    await user.click(
+      screen.getByLabelText(`Select file ${availableFile.name}`)
+    );
     await user.click(screen.getByText("Download selected"));
     expect(downloadClickFn).toHaveBeenCalledWith([availableFile]);
   });
@@ -82,7 +84,7 @@ describe("FileDownload", () => {
       render(<FileDownload {...defaultProps} />);
 
       await user.click(
-        screen.getByLabelText(`Select file ${availableFile.key}`)
+        screen.getByLabelText(`Select file ${availableFile.name}`)
       );
 
       const selectAllCheckbox = screen.getByLabelText<HTMLInputElement>(
@@ -94,7 +96,9 @@ describe("FileDownload", () => {
     });
   });
 
-  it.todo("should validate a11y fast pass checks", () => {
+  it.todo("should pass accessibility checks", () => {
     // Test for accessibility errors using axe core library
   });
+
+  it.todo("should render correct message when items is empty array", () => {});
 });

@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { IFileDownloadItem, IFileDownloadProps } from "./FileDownload.types";
 
-export interface FraudInvestigationFile {
+export interface FraudInvestigationFile extends IFileDownloadItem {
   id: string;
   name: string;
   device: string;
@@ -61,13 +61,9 @@ const files: FraudInvestigationFile[] = [
 ];
 
 export type FileWithKey = FraudInvestigationFile & IFileDownloadItem;
-const mockItems: FileWithKey[] = files.map((file) => ({
-  ...file,
-  key: file.id,
-}));
 
 export const mockFileDownloadProps: IFileDownloadProps<FileWithKey> = {
-  items: mockItems,
+  items: files,
   caption: "Download files for fraud analysis",
   downloadActionProps: {
     buttonText: "Download selected",
@@ -77,6 +73,7 @@ export const mockFileDownloadProps: IFileDownloadProps<FileWithKey> = {
       alert(items.map((i) => `${i.device} => ${i.path} \n`).join("\n")),
   },
   columns: [
+    // All these headers would ideally be localized.
     { header: "Name", key: "name" },
     { header: "Device", key: "device" },
     { header: "Path", key: "path" },
@@ -95,5 +92,5 @@ export const mockFileDownloadProps: IFileDownloadProps<FileWithKey> = {
     },
   ],
   canDownloadFile: ({ status }: FileWithKey) => status === "Available",
-  selectionMode: "multiple",
+  selectionMode: "multiple", // todo: support for single and multi file downloads in future.
 };

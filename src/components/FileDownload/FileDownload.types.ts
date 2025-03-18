@@ -1,5 +1,5 @@
 export interface IFileDownloadItem {
-  key: string;
+  id: string;
   name: string;
 }
 

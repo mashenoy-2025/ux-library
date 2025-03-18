@@ -33,7 +33,7 @@
 
 - Component is build only for desktop screen resolution, additional work required to support different screen sizes and devices.
 
-- Pagination/Virtualization based on size of the data.
+- Pagination/Virtualization is not implemented but should be considered based on use case.
 
 - If the component library will be used across multiple applications or partners, consider incorporating visual testing and component documentation with a tool like Storybook.
 
@@ -42,3 +42,5 @@
 - Basic accessibility features such as tab stops, color contrast, html semantics and labels are taken care but additional work is required to handle zoom (400%), mobile resolutions, forced colors settings.
 
 - Only basic button styles are added in global.css. Button styles come from the design system and should handle states like pressed, hover, and active.
+
+- While most of the text/strings used within the component are passed in via props by parent component. Localization of all the strings used within the component will need additional work.

@@ -9,6 +9,7 @@ exports[`FileDownload > should match default snapshot 1`] = `
       class="FileDownload__toolbar"
     >
       <span
+        aria-live="polite"
         class="selection_information"
       >
         None selected
@@ -30,9 +31,7 @@ exports[`FileDownload > should match default snapshot 1`] = `
       </caption>
       <thead>
         <tr>
-          <th
-            scope="col"
-          >
+          <th>
             <input
               aria-label="Select all files for download"
               id="checkbox_selectAll"
@@ -65,11 +64,9 @@ exports[`FileDownload > should match default snapshot 1`] = `
         <tr
           class="disabled"
         >
-          <td
-            scope="col"
-          >
+          <td>
             <input
-              aria-label="Select file 3564d56c-dee1-47e3-a1d3-65252096c1bf"
+              aria-label="Select file smss.exe"
               disabled=""
               id="checkbox_select_3564d56c-dee1-47e3-a1d3-65252096c1bf"
               type="checkbox"
@@ -97,11 +94,9 @@ exports[`FileDownload > should match default snapshot 1`] = `
         <tr
           class=""
         >
-          <td
-            scope="col"
-          >
+          <td>
             <input
-              aria-label="Select file bd817d8e-f1ce-4ccc-ba5a-cef2774e1179"
+              aria-label="Select file netsh.exe"
               id="checkbox_select_bd817d8e-f1ce-4ccc-ba5a-cef2774e1179"
               type="checkbox"
             />
@@ -132,11 +127,9 @@ exports[`FileDownload > should match default snapshot 1`] = `
         <tr
           class=""
         >
-          <td
-            scope="col"
-          >
+          <td>
             <input
-              aria-label="Select file 47e139d8-48bb-4461-8fec-c8a7886cf386"
+              aria-label="Select file uxtheme.dll"
               id="checkbox_select_47e139d8-48bb-4461-8fec-c8a7886cf386"
               type="checkbox"
             />
@@ -167,11 +160,9 @@ exports[`FileDownload > should match default snapshot 1`] = `
         <tr
           class="disabled"
         >
-          <td
-            scope="col"
-          >
+          <td>
             <input
-              aria-label="Select file 829d8a70-6df8-4419-a4e9-ccc02b1a2fde"
+              aria-label="Select file aries.sys"
               disabled=""
               id="checkbox_select_829d8a70-6df8-4419-a4e9-ccc02b1a2fde"
               type="checkbox"
@@ -199,11 +190,9 @@ exports[`FileDownload > should match default snapshot 1`] = `
         <tr
           class="disabled"
         >
-          <td
-            scope="col"
-          >
+          <td>
             <input
-              aria-label="Select file 969f5965-3118-43c0-9d6a-d450e582cf82"
+              aria-label="Select file cryptbase.dll"
               disabled=""
               id="checkbox_select_969f5965-3118-43c0-9d6a-d450e582cf82"
               type="checkbox"
@@ -231,11 +220,9 @@ exports[`FileDownload > should match default snapshot 1`] = `
         <tr
           class="disabled"
         >
-          <td
-            scope="col"
-          >
+          <td>
             <input
-              aria-label="Select file 5"
+              aria-label="Select file 7za.exe"
               disabled=""
               id="checkbox_select_5"
               type="checkbox"

@@ -23,7 +23,7 @@ export const FileDownload = <T extends IFileDownloadItem>({
   const { buttonText, onClick } = downloadActionProps;
 
   const isItemSelected = useCallback(
-    (item: T) => selectedItems.some((s) => s.key === item.key),
+    (item: T) => selectedItems.some((s) => s.id === item.id),
     [selectedItems]
   );
 
@@ -50,13 +50,11 @@ export const FileDownload = <T extends IFileDownloadItem>({
       }
 
       const isItemAlreadySelected = selectedItems.some(
-        ({ key }) => key === item.key
+        ({ id }) => id === item.id
       );
 
       if (isItemAlreadySelected) {
-        setSelectedItems([
-          ...selectedItems.filter(({ key }) => key !== item.key),
-        ]);
+        setSelectedItems([...selectedItems.filter(({ id }) => id !== item.id)]);
       } else {
         setSelectedItems([...selectedItems, item]);
       }
@@ -127,7 +125,7 @@ export const FileDownload = <T extends IFileDownloadItem>({
         <tbody>
           {items.map((item) => (
             <tr
-              key={item.key}
+              key={item.id}
               className={classNames(
                 isItemSelected(item) && "selected",
                 !canDownloadFile(item) && "disabled"
@@ -136,7 +134,7 @@ export const FileDownload = <T extends IFileDownloadItem>({
             >
               <td key="selection">
                 <input
-                  id={`checkbox_select_${item.key}`}
+                  id={`checkbox_select_${item.id}`}
                   type="checkbox"
                   checked={isItemSelected(item)}
                   disabled={!canDownloadFile(item)}
