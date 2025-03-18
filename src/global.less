@@ -1,0 +1,73 @@
+:root {
+  /* Colors, spacing, color palette should be defined by the design system */
+  --primary-background-color: #fff;
+  --primary-foreground-color: #000;
+  --mobile-breakpoint: 600px;
+  --spacing-small: 6px;
+  --spacing-medium: 12px;
+  --font-size-body: 14px;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --primary-button-background-color: #eee;
+  --primary-button-hover-color: #f6f3f3;
+  --focus-ring-color: #4b95e0;
+}
+
+body {
+  margin: 0;
+  padding: var(--spacing-medium);
+
+  background-color: var(--primary-background-color);
+  color: var(--primary-foreground-color);
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: var(---font-weight-regular);
+}
+
+/* Button styles should come from the design system (hover, pressed, rest state, disabled,  high contrast etc) */
+button {
+  border-radius: 4px;
+  border: 1px solid #eee;
+  padding: var(--spacing-medium);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  cursor: pointer;
+  background-color: var(--primary-button-background-color);
+  color: var(--primary-foreground-color);
+
+  &:hover {
+    background-color: var(--primary-button-hover-color);
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 2px auto var(--focus-ring-color);
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.flex-row-centered {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.status-green {
+  display: inline-block;
+  padding: 10px;
+  background-color: #28a745;
+  border-radius: 50%;
+}
